@@ -80,7 +80,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         response = await asyncio.to_thread(
             gemini_client.models.generate_content,
-            model="gemini-2.0-flash",
+            model="gemini-3.8-flash",
             contents=contents
         )
         bot_response = response.text if response and response.text else "Désolé, je n'ai pas pu générer de réponse."
