@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./leads.db:/app/leads.db
+      - ./leads.csv:/app/leads.csv
+      - ./system_prompt.txt:/app/system_prompt.txt
+      - ./welcome_message.txt:/app/welcome_message.txt
